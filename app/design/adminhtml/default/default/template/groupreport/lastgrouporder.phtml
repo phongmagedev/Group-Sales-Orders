@@ -1,0 +1,46 @@
+<?php $collection = $this->getLastGroupOrderCollection(); ?>
+<?php $enableGroups = Mage::helper('groupreport')->checkSaparatedGroup(); ?>
+<?php $limit = Mage::helper('groupreport')->getLimitLastOrder(); ?>
+<?php foreach($enableGroups as $groupId): ?>
+    <div class="entry-edit">
+        <div class="entry-edit-head"><h4>Last <?= $limit; ?> Orders of <?= Mage::helper('groupreport')->getCustomerGroupNameById($groupId); ?></h4></div>
+        <fieldset class="np"><div class="grid np">
+                <table cellspacing="0" style="border:0;" id="lastOrdersGrid_table">
+                    <colgroup><col>
+                        <col width="100">
+                        <col width="100">
+                    </colgroup><thead>
+                    <tr class="headings">
+                        <th class=" no-link"><span class="nobr"><?= Mage::helper('groupreport')->getCustomerGroupNameById($groupId); ?></span></th>
+                        <th class=" no-link"><span class="nobr">Items</span></th>
+                        <th class=" no-link last"><span class="nobr">Grand Total</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php $i = 0; ?>
+                    <?php foreach($collection as $order): ?>
+                        <?php if($i <=$limit): ?>
+                            <?php if($order->getCustomerGroupId() == $groupId): ?>
+
+                            <tr onClick="location.href='<?=$this->getUrl('*/sales_order/view', array('order_id'=>$order->getId()));?>'" title="<?=$this->getUrl('*/sales_order/view', array('order_id'=>$order->getId()));?>" class="even pointer">
+                                <td class=" "><?= $order->getCustomerFirstname(); ?> <?= $order->getCustomerLastname(); ?></td>
+                                <td class="a-right a-right "><?= substr($order->getTotalQtyOrdered(),0,strpos($order->getTotalQtyOrdered(), ".")); ?></td>
+                                <td class="a-right a-right last"><?= Mage::helper('core')->currency($order->getGrandTotal(),true,false); ?></td>
+                            </tr>
+                            <?php $i++;?>
+                            <?php endif;?>
+                        <?php endif;?>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+    </div>
+<?php endforeach; ?>
+
+
+
+
+
+
+

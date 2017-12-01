@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_groupreport_separated>
+        <reference name="content">
+            <block type="groupreport/adminhtml_separated" name="separated_group"/>
+        </reference>
+    </adminhtml_groupreport_separated>
+
+    <adminhtml_groupreport_another>
+        <reference name="content">
+            <block type="groupreport/adminhtml_another" name="another_group"/>
+        </reference>
+    </adminhtml_groupreport_another>
+</layout>

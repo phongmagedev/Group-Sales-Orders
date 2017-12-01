@@ -1,0 +1,4 @@
+app/etc/modules/Fram_Groupreport.xml    app/etc/modules/Fram_Groupreport.xml
+app/code/community/Fram/Groupreport/    app/code/community/Fram/Groupreport/
+app/design/adminhtml/default/default/template/groupreport  app/design/adminhtml/default/default/template/groupreport
+app/design/adminhtml/default/default/layout/groupreport.xml app/design/adminhtml/default/default/layout/groupreport.xml

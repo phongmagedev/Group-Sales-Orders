@@ -1,0 +1,16 @@
+<?php if(!Mage::helper('groupreport')->isRemoveDefaultLastOrders()): ?>
+<?= $this->getChildHtml('groupreport') ;?>
+<?php else: ?>
+<script>
+    var col_wrapper = document.getElementsByTagName("h4");
+    var len = col_wrapper.length;
+    for (var i = 0; i < len; i++) {
+        if (col_wrapper[i].innerHTML == 'Last 5 Orders') {
+            col_wrapper[i].parentNode.remove(col_wrapper[i]);
+        }
+    }
+</script>
+<?php endif; ?>
+<?php if(Mage::helper('groupreport')->isEnable()): ?>
+<?=  $this->getLayout()->createBlock('groupreport/lastorders')->setTemplate('groupreport/lastgrouporder.phtml')->toHtml(); ?>
+<?php endif; ?>

@@ -1,0 +1,36 @@
+<?php $collection = $this->getLifetimeSales(); ?>
+<?php foreach($collection as $groupId =>$lifetimeSales): ?>
+<div class="entry-edit">
+    <div class="entry-edit-head"><h4> <?= Mage::helper('groupreport')->getCustomerGroupNameById($groupId) ?> <?= $this->__('Group') ?></h4></div>
+    <fieldset class="np"><div class="grid np">
+            <table cellspacing="0" style="border:0;" id="lastOrdersGrid_table">
+                <colgroup><col>
+                    <col width="100">
+                    <col width="100">
+                </colgroup><thead>
+                <tr class="headings">
+                    <th class="a-center no-link"><span class="nobr"><?= $this->__('Lifetime Sales') ?> </span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="even pointer">
+                    <td class="a-center a-center last"><?= Mage::helper('core')->currency($lifetimeSales['lifetime_sales'],true,false); ?></td>
+                </tr>
+                </tbody>
+                <tr class="headings">
+                    <th class="a-center no-link"><span class="nobr"><?= $this->__('Average Order') ?></span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="even pointer">
+                    <td class="a-center a-center last"><?= Mage::helper('core')->currency($lifetimeSales['avg'],true,false); ?></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
+</div>
+
+<?php endforeach; ?>
+
+

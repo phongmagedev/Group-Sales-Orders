@@ -1,0 +1,17 @@
+<?php if(!Mage::helper('groupreport')->isRemovedDefaultLifesales()): ?>
+    <?= $this->getChildHtml('sales') ;?>
+<?php else: ?>
+    <script>
+        var col_wrapper = document.getElementsByTagName("h4");
+        var len = col_wrapper.length;
+        for (var i = 0; i < len; i++) {
+            if (col_wrapper[i].innerHTML == <?php $this->__('Lifetime Sales') ?> || col_wrapper[i].innerHTML ==  <?php $this->__('Average Orders') ?>) {
+                col_wrapper[i].parentNode.remove(col_wrapper[i]);
+            }
+        }
+    </script>
+<?php endif; ?>
+<?php if(Mage::helper('groupreport')->isLifesalesEnable()): ?>
+
+    <?=  $this->getLayout()->createBlock('groupreport/sales')->setTemplate('groupreport/lifesales.phtml')->toHtml(); ?>
+<?php endif; ?>

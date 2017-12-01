@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<config>
+								<children>
+									<fram_groupreport translate="title" module="groupreport">
+										<title>Fram - Group Report</title>
+										<sort_order>50</sort_order>
+									</fram_groupreport>
+								</children>
+							</config>
+						</children>
+					</system>
+					<sales>
+						<children>
+							<order translate="title" module="groupreport">
+								<children>
+									<separated_group>
+										<title>Separated Group Order</title>
+										<sort_order>10</sort_order>
+									</separated_group>
+									<another_group>
+										<title>Another Group Order</title>
+										<sort_order>20</sort_order>
+									</another_group>
+								</children>
+							</order>
+						</children>
+					</sales>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>
