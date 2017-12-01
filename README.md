@@ -25,11 +25,15 @@
 
 - Support Magento verison >= 1.8.0
 
+- Configuration for Lifetime sales and last orders :
+
+![Alt text](images/fullConfig.png?raw=true "Full Configuration")
+
+- Separated Orders Configuration: It's will be added menu "Separated Group" & "Another Group"  into Sales -> Order .
+
 ![Alt text](images/configuration.png?raw=true "Separated Orders Configuration")
 
 ![Alt text](images/tabOrders.png?raw=true "Separated Orders Configuration")
-
-- Separated Orders Configuration: It's will be added menu "Separated Group" & "Another Group"  into Sales -> Order .
 
 - "Separated Group" & "Another Group" can be changed in configuration .
 
